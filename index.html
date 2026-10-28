@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beka Bekturov — инди-разработчик игр, Бишкек</title>
+<meta name="description" content="Beka Bekturov — независимый разработчик игр из Бишкека, Кыргызстан. Игры на itch.io: Roulette European и другие проекты.">
+<!-- Для верификации домена в Facebook вставьте сюда ваш мета-тег:
+<meta name="facebook-domain-verification" content="ВАШ_КОД" /> -->
+<meta property="og:title" content="Beka Bekturov — инди-разработчик игр">
+<meta property="og:description" content="Независимый разработчик игр из Бишкека, Кыргызстан.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --felt:#0e3b2c; --felt-deep:#082a1f; --ivory:#f3efe4; --brass:#d4a94f;
+  --roul-red:#b3261e; --ink:#14201b; --paper:#f7f4ec;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:18px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{background:var(--felt);color:var(--ivory);padding:72px 0 88px;background-image:radial-gradient(ellipse at 20% 0%,#15513c 0%,transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;font-weight:800;letter-spacing:-.02em}
+.lead{margin-top:22px;font-size:1.2rem;max-width:34ch;color:#d9e3dc}
+.facts{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+.facts span{border:1px solid rgba(243,239,228,.35);border-radius:999px;padding:6px 16px;font-size:.95rem}
+.cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:8px;background:var(--brass);color:#1b1608;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ivory);border:1px solid var(--ivory)}
+
+/* Wheel photo */
+.wheel{position:relative;width:min(100%,400px);aspect-ratio:1;margin:0 auto;border-radius:50%;padding:30px;
+  background:conic-gradient(var(--felt-deep),var(--felt-deep));box-shadow:0 0 0 4px var(--brass),0 30px 60px rgba(0,0,0,.45)}
+.wheel .ring{position:absolute;inset:0;border-radius:50%;
+  -webkit-mask:radial-gradient(circle,transparent 62%,#000 62.5%);mask:radial-gradient(circle,transparent 62%,#000 62.5%)}
+.wheel img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;border-radius:50%;display:block;border:4px solid var(--brass)}
+@media (prefers-reduced-motion:no-preference){
+  .wheel .ring{animation:spin 90s linear infinite}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Sections */
+section{padding:84px 0}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-bottom:26px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about p+p{margin-top:16px}
+.about p{max-width:60ch}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;align-self:start;border-left:4px solid var(--brass);padding-left:24px}
+dt{font-weight:600}
+dd{color:#3d4a44}
+
+.games{background:#ece7d8}
+.game{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 0;border-top:1px solid rgba(20,32,27,.25)}
+.game:last-child{border-bottom:1px solid rgba(20,32,27,.25)}
+.game h3{font-size:1.5rem;font-weight:600}
+.game p{color:#3d4a44;max-width:52ch}
+.tag{font-size:.85rem;border:1px solid var(--ink);border-radius:999px;padding:3px 12px;white-space:nowrap}
+.game .btn{background:var(--felt);color:var(--ivory)}
+.chip{width:56px;height:56px;border-radius:50%;background:var(--roul-red);border:4px dashed var(--ivory);box-shadow:0 0 0 3px var(--roul-red);}
+.chip.b{background:var(--felt)}
+.chip{margin:3px}
+
+.contact{background:var(--felt);color:var(--ivory)}
+.contact p{max-width:52ch;color:#d9e3dc}
+.links{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+footer{background:var(--felt-deep);color:#a9bdb2;padding:24px 0;font-size:.9rem}
+
+@media (max-width:800px){
+  body{font-size:17px}
+  .hero{padding:48px 0 64px}
+  .hero .wrap,.about{grid-template-columns:1fr;gap:40px}
+  .wheel{order:-1;width:min(80%,320px)}
+  .game{grid-template-columns:1fr;gap:12px}
+  .chip{display:none}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Beka Bekturov</h1>
+      <p class="lead">Инди-разработчик игр из Бишкека. Делаю небольшие игры в одиночку, от идеи до публикации.</p>
+      <div class="facts">
+        <span>Бишкек, Кыргызстан</span>
+        <span>34 года</span>
+        <span>Инди-разработчик</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#games">Мои игры</a>
+        <a class="btn ghost" href="#contact">Связаться</a>
+      </div>
+    </div>
+    <div class="wheel">
+      <div class="ring" id="ring" aria-hidden="true"></div>
+      <img src="photo.jpg" alt="Фото Beka Bekturov, инди-разработчика игр" width="400" height="400">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>Обо мне</h2>
+        <p>Меня зовут Beka, мне 34 года. Я живу в Бишкеке, в Кыргызстане, и разрабатываю игры как независимый разработчик.</p>
+        <p>Я женат, у нас двое детей. Семья — моя главная опора, и именно ради неё я учусь делать продукты, которыми можно гордиться и которые приносят пользу.</p>
+        <p>Работаю сам: придумываю механику, программирую, оформляю и публикую игры на itch.io. Мне важны аккуратная работа, понятный интерфейс и честное отношение к игрокам.</p>
+      </div>
+      <dl>
+        <dt>Профессия</dt><dd>Инди-разработчик игр</dd>
+        <dt>Город</dt><dd>Бишкек, Кыргызстан</dd>
+        <dt>Возраст</dt><dd>34 года</dd>
+        <dt>Семья</dt><dd>Женат, двое детей</dd>
+        <dt>Платформа</dt><dd>itch.io</dd>
+        <dt>Языки</dt><dd>Русский, кыргызский, английский</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="games" class="games">
+    <div class="wrap">
+      <h2>Игры</h2>
+      <article class="game">
+        <div class="chip" aria-hidden="true"></div>
+        <div>
+          <h3>Roulette European</h3>
+          <p>Европейская рулетка с одним зеро. Играется прямо в браузере на itch.io.</p>
+        </div>
+        <a class="btn" href="https://bekabekturov.itch.io/roulette-european" target="_blank" rel="noopener">Играть на itch.io</a>
+      </article>
+      <article class="game">
+        <div class="chip b" aria-hidden="true"></div>
+        <div>
+          <h3>Вторая игра</h3>
+          <p>Короткое описание второй игры. Замените название, текст и ссылку на свои.</p>
+        </div>
+        <a class="btn" href="https://example.com" target="_blank" rel="noopener">Открыть игру</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Связаться</h2>
+      <p>Пишите, если хотите обсудить сотрудничество, оставить отзыв об играх или задать вопрос.</p>
+      <div class="links">
+        <a class="btn" href="mailto:your@email.com">your@email.com</a>
+        <a class="btn ghost" href="https://bekabekturov.itch.io" target="_blank" rel="noopener">Профиль на itch.io</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Beka Bekturov. Бишкек, Кыргызстан.</div>
+</footer>
+
+<script>
+// Кольцо колеса европейской рулетки: порядок чисел как на настоящем колесе
+(function(){
+  var order=[0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26];
+  var red=[1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
+  var step=360/order.length, stops=[];
+  order.forEach(function(n,i){
+    var c=n===0?'#1f7a4d':(red.indexOf(n)>-1?'#b3261e':'#101312');
+    stops.push(c+' '+(i*step)+'deg '+((i+1)*step)+'deg');
+  });
+  document.getElementById('ring').style.background='conic-gradient('+stops.join(',')+')';
+})();
+</script>
+</body>
+</html>
